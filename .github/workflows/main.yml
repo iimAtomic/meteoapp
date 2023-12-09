@@ -7,6 +7,9 @@ jobs:
     env:
       DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
     steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v2  # Cette étape vérifie le dépôt
+
     - name: Install IPFS
       run: |
         wget https://dist.ipfs.io/go-ipfs/v0.9.1/go-ipfs_v0.9.1_linux-amd64.tar.gz
