@@ -13,13 +13,19 @@ jobs:
         tar xvfz go-ipfs_v0.9.1_linux-amd64.tar.gz
         sudo bash go-ipfs/install.sh
         ipfs init
+
     - name: Generate IPFS Key
       run: |
-       
         ipfs_key=$(ipfs key gen --type=rsa --size=2048 my-key)
         echo "$ipfs_key" > ipfs_key.txt
+
+    - name: Get Commit Message
+      run: |
+        commit_message=$(git log -1 --pretty=%B)
+        echo "::set-env name=COMMIT_MESSAGE::${commit_message}"
+
     - name: Notify on Discord
       run: |
-       
         ipfs_key=$(cat ipfs_key.txt)
-        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Le workflow IPFS est terminé. Clé IPFS : $ipfs_key\"}" $DISCORD_WEBHOOK
+        commit_message="${COMMIT_MESSAGE}"
+        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Le workflow IPFS est terminé. Clé IPFS : $ipfs_key\n\nDernier commit : $commit_message\"}" $DISCORD_WEBHOOK
