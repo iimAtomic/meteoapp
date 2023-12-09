@@ -1,3 +1,20 @@
+.forecast-container {
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+ }
+ 
+ .search-container {
+  margin-bottom: 1rem;
+ }
+ 
+ .search-container input {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+ }
+
 .main {
   display: flex;
   flex-direction: column;
