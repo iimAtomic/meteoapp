@@ -1,0 +1,25 @@
+name: Notifications Discord 
+on: push
+jobs:
+  github:
+    name: Notification_Discord
+    runs-on: ubuntu-latest
+    env:
+      DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+    steps:
+    - name: Install IPFS
+      run: |
+        wget https://dist.ipfs.io/go-ipfs/v0.9.1/go-ipfs_v0.9.1_linux-amd64.tar.gz
+        tar xvfz go-ipfs_v0.9.1_linux-amd64.tar.gz
+        sudo bash go-ipfs/install.sh
+        ipfs init
+    - name: Generate IPFS Key
+      run: |
+       
+        ipfs_key=$(ipfs key gen --type=rsa --size=2048 my-key)
+        echo "$ipfs_key" > ipfs_key.txt
+    - name: Notify on Discord
+      run: |
+       
+        ipfs_key=$(cat ipfs_key.txt)
+        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Le workflow IPFS est terminé. Clé IPFS : $ipfs_key\"}" $DISCORD_WEBHOOK
