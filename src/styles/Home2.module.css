@@ -1,0 +1,23 @@
+/* styles/Home.module.css */
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 2rem;
+    background-color: #fff;
+  
+  section {
+    text-align: center;
+  }
+  
+  input {
+    padding: 0.5rem;
+  }
+  
+  button {
+    padding: 0.5rem 1rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
