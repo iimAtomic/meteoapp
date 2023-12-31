@@ -1,14 +1,17 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/header/header'
 import SearchBar from '@/components/searchBar/search'
-import MapWithWeather from '@/components/map/map'
+import Index from '@/components/map/map'
+import WeatherMap from '@/components/map/WeatherMap'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  // Coordonnées de Paris
+  const parisCoordinates = { lat: 48.8566, lng: 2.3522 };
+
   return (
     <>
       <Head>
@@ -18,11 +21,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-       <Navbar/>
-       <SearchBar onSearch={function (query: string): void {
-          throw new Error('Function not implemented.')
-        } }/>
-       <MapWithWeather/>
+        <Navbar />
+        <SearchBar onSearch={(query: string) => {
+        }} />
+
+
+        <WeatherMap/>
       </main>
     </>
   )

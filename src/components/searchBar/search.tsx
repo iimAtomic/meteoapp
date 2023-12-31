@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent, MouseEvent } from 'react';
-import { Input, Button, Flex } from '@chakra-ui/react';
+import { Input, Button, Flex, background } from '@chakra-ui/react';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;

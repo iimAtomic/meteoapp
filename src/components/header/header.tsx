@@ -50,7 +50,7 @@ const Navbar = () => {
 
 
       {/* CLIMAT */}
-      <Flex alignItems="center" style={{ color: "#003661" }}>
+      <Flex alignItems="center" style={{ color: "#fff" }}>
         <Spacer />
         <IconBox icon={<FaCloudSun />}>PREVISIONS</IconBox>
         <Spacer />
