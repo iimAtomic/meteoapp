@@ -29,7 +29,7 @@ export default function Home() {
             alignItems: 'center',
             justifyContent: 'space-around',
             marginTop: '30px',
-            backgroundColor: '#fff',
+            backgroundColor: '#a0a0eb',
             border: 'solid 1px black',
             borderRadius: '18px',
             boxShadow: '-1px -1px 15px 1px #000000'
@@ -37,6 +37,7 @@ export default function Home() {
            <h1 >METEO FRANCE</h1>
           <WeatherMap />
         </div>
+        
       </main>
     </>
   )

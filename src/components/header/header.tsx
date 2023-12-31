@@ -61,6 +61,12 @@ const Navbar = () => {
         <Spacer />
       </Flex>
 
+      <Box className="flex3"  display="none" >
+        <div style={{backgroundColor:'#a0a0eb' , width:'100%', height:'65px' , alignItems: 'center' , justifyContent:'space-around', display:'flex'}}>
+            <img src="/images/LOGO_MF.png" alt="Mon image" style={{width:'60px', height:'60px'}}/>
+            <img src="/images/Rep.png" alt="Mon image" style={{width:'60px', height:'60px'}}/>
+        </div>
+        </Box>
       <Box className="flex3" p={4} display="none" >
         <SearchBar onSearch={(query: string) => {}} />
         </Box>
@@ -84,6 +90,8 @@ const Navbar = () => {
         <IconBox icon={<IoMdMenu />} children={undefined} />
         <Spacer />
       </Flex>
+
+      
     </Box>
   );
 };
