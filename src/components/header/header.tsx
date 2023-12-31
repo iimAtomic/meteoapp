@@ -6,6 +6,18 @@ import { LuWaves } from "react-icons/lu";
 import styles from "@/styles/Header.module.css";
 import SearchBar from "../searchBar/search";
 
+
+
+const mediaQuery = `@media screen and (max-width: 768px) {
+  .flex1,
+  .flex2 {
+    display: none;
+  }
+  .flex3{
+    display: flex;
+  }
+}`
+
 interface IconBoxProps {
   icon: ReactElement;
   children: ReactNode;
@@ -20,7 +32,10 @@ const IconBox = ({ children, icon }: IconBoxProps) => (
 const Navbar = () => {
   return (
     <Box>
-      <Flex marginBottom="10px" marginTop="10px" alignItems="center">
+
+<style>{mediaQuery}</style>
+ {/* FLEX 1*/}
+      <Flex className="flex1" marginBottom="10px" marginTop="10px" alignItems="center">
         <Spacer />
         <Box width="90px" height="90px" bg="red.400">
           <img src="/images/LOGO_MF.png" alt="Mon image" />
@@ -46,9 +61,13 @@ const Navbar = () => {
         <Spacer />
       </Flex>
 
+      <Box className="flex3" p={4} display="none" >
+        <SearchBar onSearch={(query: string) => {}} />
+        </Box>
 
-      {/* CLIMAT */}
-      <Flex alignItems="center">
+
+      {/* FLEX 2*/}
+      <Flex className="flex2" alignItems="center">
         <Spacer />
         <IconBox icon={<FaCloudSun />}>PREVISIONS</IconBox>
         <Spacer />

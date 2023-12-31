@@ -87,10 +87,11 @@ const WeatherMap: React.FC = () => {
   return (
   <>
     {weatherDataList && (
+      <div style={{ width: '100%', height: '60vh' }}>
       <GoogleMap
         zoom={6}
         center={{ lat: 46.6031, lng: 1.8883 }}
-        mapContainerStyle={{ width: "700px", height: "600px", alignContent: "center" }}
+        mapContainerStyle={{ width: '100%', height: '100%' }}
       >
         {weatherDataList.map((weatherData, index) => (
           <Marker
@@ -105,7 +106,6 @@ const WeatherMap: React.FC = () => {
               origin: new window.google.maps.Point(0, 0),
               anchor: new window.google.maps.Point(20, 20),
             }}
-            
             onClick={() => handleMarkerClick(weatherData)}
           />
         ))}
@@ -117,10 +117,10 @@ const WeatherMap: React.FC = () => {
             }}
             onCloseClick={handleInfoWindowClose}
           >
-            <div style={{ textAlign: "center" }}>
-              <p style={{ color: "black" }}>{selectedMarker.name}</p>
-              <p style={{ color: "black" }}>{selectedMarker.weather[0].description}</p>
-              <p style={{ color: "black" }}>{selectedMarker.main.temp}°C</p>
+            <div style={{ textAlign: 'center' }}>
+              <p style={{ color: 'black' }}>{selectedMarker.name}</p>
+              <p style={{ color: 'black' }}>{selectedMarker.weather[0].description}</p>
+              <p style={{ color: 'black' }}>{selectedMarker.main.temp}°C</p>
               <img
                 src={`https://openweathermap.org/img/wn/${selectedMarker.weather[0].icon}.png`}
                 alt="Weather Icon"
@@ -129,6 +129,7 @@ const WeatherMap: React.FC = () => {
           </InfoWindow>
         )}
       </GoogleMap>
+    </div>
     )}
 
     <div style={{ textAlign: "center", marginTop: "20px" }}>

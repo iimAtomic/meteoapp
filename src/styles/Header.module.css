@@ -1,7 +1,6 @@
-Box {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 2px;
+@media screen and (max-width: 768px) {
+  .flex1,
+  .flex2 {
+    display: none;
   }
-
+}

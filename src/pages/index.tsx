@@ -30,9 +30,6 @@ export default function Home() {
             justifyContent: 'space-around',
             marginTop: '30px',
             backgroundColor: '#fff',
-            width: '750px',
-            marginLeft: '290px',
-            height: '700px',
             border: 'solid 1px black',
             borderRadius: '18px',
             boxShadow: '-1px -1px 15px 1px #000000'
