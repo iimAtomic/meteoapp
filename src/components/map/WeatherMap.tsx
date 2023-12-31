@@ -88,7 +88,7 @@ const WeatherMap: React.FC = () => {
         <GoogleMap
           zoom={6}
           center={{ lat: 46.6031, lng: 1.8883 }}
-          mapContainerStyle={{ width: "500px", height: "600px" }}
+          mapContainerStyle={{ width: "700px", height: "600px", alignContent:"center" }}
         >
           {weatherDataList.map((weatherData, index) => (
             <Marker

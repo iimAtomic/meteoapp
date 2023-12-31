@@ -3,8 +3,8 @@ import { Inter } from 'next/font/google'
 import styles from '@/styles/Home.module.css'
 import Navbar from '@/components/header/header'
 import SearchBar from '@/components/searchBar/search'
-import Index from '@/components/map/map'
 import WeatherMap from '@/components/map/WeatherMap'
+import { background } from '@chakra-ui/react'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,11 +22,25 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
-        <SearchBar onSearch={(query: string) => {
-        }} />
-
-
-        <WeatherMap/>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'center',
+            alignItems: 'center',
+            justifyContent: 'space-around',
+            marginTop: '30px',
+            backgroundColor: '#fff',
+            width: '750px',
+            marginLeft: '290px',
+            height: '700px',
+            border: 'solid 1px black',
+            borderRadius: '18px',
+            boxShadow: '-1px -1px 15px 1px #000000'
+          }}> 
+           <h1 >METEO FRANCE</h1>
+          <WeatherMap />
+        </div>
       </main>
     </>
   )

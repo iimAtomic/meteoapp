@@ -1,9 +1,10 @@
 import React, { ReactElement, ReactNode } from "react";
 import { Box, Flex, Img, Spacer } from "@chakra-ui/react";
-import { FaCloudSun, FaNewspaper, FaEarthEurope, FaMountain } from "react-icons/fa6";
+import { FaCloudSun, FaNewspaper, FaEarthEurope, FaMountain, FaFacebookF, FaLinkedin, FaTwitter } from "react-icons/fa6";
 import { IoMdPersonAdd, IoMdMenu } from "react-icons/io";
 import { LuWaves } from "react-icons/lu";
 import styles from "@/styles/Header.module.css";
+import SearchBar from "../searchBar/search";
 
 interface IconBoxProps {
   icon: ReactElement;
@@ -28,12 +29,12 @@ const Navbar = () => {
           <img src="/images/Rep.png" alt="Mon image" />
         </Box>
         <Spacer />
-        <Box p={4} bg="red.400">
-          Box 1
+        <Box p={4}>
+        <SearchBar onSearch={(query: string) => {}} />
         </Box>
         <Spacer />
-        <Box p={4} bg="red.400">
-          Box 1
+        <Box  style={{display: "flex", alignItems: "center", width: "150px", justifyContent: "space-around" }}>
+        <FaFacebookF /> <FaTwitter /> <FaLinkedin />
         </Box>
         <Spacer />
         <Box p={4} >
@@ -42,15 +43,12 @@ const Navbar = () => {
         <Box p={4} >
         <img src="/images/minimap.png" alt="Image 1" style={{width: "60px" }} />
         </Box>
-        <Box p={4} bg="red.400">
-        <img src="https://example.com/image1.jpg" alt="Image 1" style={{ width: "100%" }} />
-        </Box>
         <Spacer />
       </Flex>
 
 
       {/* CLIMAT */}
-      <Flex alignItems="center" style={{ color: "#fff" }}>
+      <Flex alignItems="center">
         <Spacer />
         <IconBox icon={<FaCloudSun />}>PREVISIONS</IconBox>
         <Spacer />
