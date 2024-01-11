@@ -1,4 +1,4 @@
-name: Notifications Discord
+name: Notifications Discord 
 on: push
 jobs:
   github:
@@ -15,13 +15,11 @@ jobs:
         ipfs init
     - name: Generate IPFS Key
       run: |
+       
         ipfs_key=$(ipfs key gen --type=rsa --size=2048 my-key)
         echo "$ipfs_key" > ipfs_key.txt
     - name: Notify on Discord
       run: |
+       
         ipfs_key=$(cat ipfs_key.txt)
-        commit_author=$(git log -1 --pretty=format:'%an')
-        branch_name=$(git rev-parse --symbolic-full-name --abbrev-ref HEAD)
-        commit_message=$(git log -1 --pretty=format:'%s')
-        discord_message="Le workflow IPFS est terminé.\nMembre de l'équipe : $commit_author\nBranche : $branch_name\nMessage du commit : $commit_message\nClé IPFS : $ipfs_key"
-        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"$discord_message\"}" $DISCORD_WEBHOOK
+        curl -X POST -H "Content-Type: application/json" -d "{\"content\": \"Le workflow IPFS est terminé. Clé IPFS : $ipfs_key\"}" $DISCORD_WEBHOOK
