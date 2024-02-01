@@ -21,19 +21,7 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignContent: 'center',
-            alignItems: 'center',
-            justifyContent: 'space-around',
-            marginTop: '30px',
-            backgroundColor: '#a0a0eb',
-            border: 'solid 1px black',
-            borderRadius: '18px',
-            boxShadow: '-1px -1px 15px 1px #000000'
-          }}> 
+        <div className='div1'> 
            <h1 >METEO FRANCE</h1>
           <WeatherMap />
         </div>

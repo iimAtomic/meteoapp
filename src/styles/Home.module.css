@@ -250,3 +250,17 @@
     transform: rotate(0deg);
   }
 }
+
+.div1
+{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 30px;
+  background-color: #a0a0eb;
+  border: solid 1px black;
+  border-radius: 18px;
+  box-shadow: -1px -1px 15px 1px #000000;
+}
