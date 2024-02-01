@@ -2,10 +2,11 @@ import axios from 'axios';
 
 export default async function handler(req: any, res: any) {
   const { query } = req.query;
+  const key = '1131910f4549888232cb5784114c6247';
 
   try {
     const response = await axios.get(
-      `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=1131910f4549888232cb5784114c6247`
+      `https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${key}`
     );
 
     const weatherData = response.data;
