@@ -251,8 +251,7 @@
   }
 }
 
-.div1
-{
+.div1 {
   display: flex;
   flex-direction: column;
   align-content: center;

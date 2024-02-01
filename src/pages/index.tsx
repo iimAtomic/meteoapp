@@ -21,7 +21,7 @@ export default function Home() {
       </Head>
       <main>
         <Navbar />
-        <div className='div1'> 
+        <div className={styles.div1}> 
            <h1 >METEO FRANCE</h1>
           <WeatherMap />
         </div>
