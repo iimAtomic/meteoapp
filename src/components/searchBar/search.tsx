@@ -1,5 +1,7 @@
+// Importez les éléments nécessaires
 import React, { useState, ChangeEvent, MouseEvent } from 'react';
-import { Input, Button, Flex, background } from '@chakra-ui/react';
+import { Input, Flex, InputGroup, InputLeftElement, Button } from '@chakra-ui/react';
+import { FaSearch } from 'react-icons/fa';
 
 interface SearchBarProps {
   onSearch: (query: string) => void;
@@ -23,12 +25,17 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   return (
     <Flex>
-      <Input
-        type="text"
-        placeholder="Rechercher une ville"
-        value={searchQuery}
-        onChange={handleChange}
-      />
+      <InputGroup>
+        <InputLeftElement pointerEvents="none">
+          <FaSearch />
+        </InputLeftElement>
+        <Input
+          type="text"
+          placeholder="Rechercher une ville"
+          value={searchQuery}
+          onChange={handleChange}
+        />
+      </InputGroup>
       <Button onClick={handleSubmit}>Rechercher</Button>
     </Flex>
   );
